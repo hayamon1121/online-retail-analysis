@@ -203,6 +203,7 @@ online-retail-analysis/
 │   └── targeting_effect.png
 └── notebooks/
     └── 01_online_retail_analysis.ipynb
+```
 
 - notebooks/01_online_retail_analysis.ipynb：データ前処理からRFM分析、再購入予測、ターゲティング分析までを行うメインNotebook
 - images/：READMEで使用している分析結果の可視化
@@ -213,8 +214,10 @@ online-retail-analysis/
 ## 実行方法  
 
 １．リポジトリを取得
+```
 git clone https://github.com/hayamon1121/online-retail-analysis.git
 cd online-retail-analysis
+```
 ２．仮想環境を作成する
 Windowsの場合：
 python -m venv .venv
