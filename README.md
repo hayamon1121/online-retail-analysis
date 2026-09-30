@@ -182,7 +182,51 @@ OOF予測では、予測確率が高くなるほど実際の再購入率も段�
 
 ## 分析上の限界  
 
+以下のような限界がある。
+
+- UCI Online Retailという単一のデータセットを使用しているため、ほかのECサービスでも同様の結果になるとは限らない
+- 観測期間以前の購買履歴が存在しないため、顧客の実際の利用期間を完全には把握できない
+- 再購入期間として90日を設定しているが、適切な期間は商品やビジネスによって異なる
+- 商品カテゴリ、国、季節性など、購買行動に影響する可能性のある情報を十分に特徴量として利用していない
+- 本モデルが予測しているのは「再購入する可能性」であり、クーポン配布などの施策による因果的な効果を予測しているわけではない
+
 ## ファイル構成  
+```text
+online-retail-analysis/
+├── README.md
+├── requirements.txt
+├── data/
+│   └── .gitkeep
+├── images/
+│   ├── rfm_heatmap.png
+│   ├── oof_probability_vs_actual.png
+│   └── targeting_effect.png
+└── notebooks/
+    └── 01_online_retail_analysis.ipynb
+
+- notebooks/01_online_retail_analysis.ipynb：データ前処理からRFM分析、再購入予測、ターゲティング分析までを行うメインNotebook
+- images/：READMEで使用している分析結果の可視化
+- data/：分析用データを配置するディレクトリ
+- requirements.txt：分析に必要なPythonライブラリ
+元データはリポジトリには含めていないため、実行する場合は以下の手順で別途取得する。
 
 ## 実行方法  
 
+１．リポジトリを取得
+git clone https://github.com/hayamon1121/online-retail-analysis.git
+cd online-retail-analysis
+２．仮想環境を作成する
+Windowsの場合：
+python -m venv .venv
+.venv\Scripts\activate
+３．必要なライブラリをインストール
+pip install -r requirements.txt
+４．データセットを取得
+UCI Machine Learning Repository の
+[Online Retail Dataset
+](https://archive.ics.uci.edu/dataset/320/student+performance)
+からデータを取得する。
+Notebookでは以下のファイルを使用する。
+data/online_retail.csv
+５．Jupyter Notebookを起動
+notebooks/01_online_retail_analysis.ipynb
