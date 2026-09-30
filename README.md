@@ -219,17 +219,27 @@ git clone https://github.com/hayamon1121/online-retail-analysis.git
 cd online-retail-analysis
 ```
 ２．仮想環境を作成する
+
 Windowsの場合：
+```
 python -m venv .venv
 .venv\Scripts\activate
+```
+
 ３．必要なライブラリをインストール
+```
 pip install -r requirements.txt
+```
 ４．データセットを取得
 UCI Machine Learning Repository の
 [Online Retail Dataset
 ](https://archive.ics.uci.edu/dataset/320/student+performance)
 からデータを取得する。
 Notebookでは以下のファイルを使用する。
+```
 data/online_retail.csv
+```
 ５．Jupyter Notebookを起動
+```
 notebooks/01_online_retail_analysis.ipynb
+```
