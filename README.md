@@ -232,14 +232,19 @@ pip install -r requirements.txt
 ```
 ４．データセットを取得
 UCI Machine Learning Repository の
-[Online Retail Dataset
-](https://archive.ics.uci.edu/dataset/320/student+performance)
+```
+https://archive.ics.uci.edu/dataset/352/online+retail
+```
 からデータを取得する。
 Notebookでは以下のファイルを使用する。
 ```
 data/online_retail.csv
 ```
 ５．Jupyter Notebookを起動
+```bash
+jupyter notebook
+```
+起動後以下のNotebookを開き、上から順に実行する。
 ```
 notebooks/01_online_retail_analysis.ipynb
 ```
